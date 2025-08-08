@@ -27,8 +27,8 @@ public class AutoFillAspect {
     /**
      * 切入点
      */
-    @Pointcut("@annotation(com.sky.annotation.AutoFill)")
-//    @Pointcut("execution(* com.sky.mapper.*.*(..))) && @annotation(com.sky.annotation.AutoFill)")
+//    @Pointcut("@annotation(com.sky.annotation.AutoFill)")
+    @Pointcut("execution(* com.sky.mapper.*.*(..)) && @annotation(com.sky.annotation.AutoFill)")
     public void autoFillPointcut() {}
 
     /**
