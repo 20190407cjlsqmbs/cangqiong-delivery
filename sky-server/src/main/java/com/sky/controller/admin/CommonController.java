@@ -33,6 +33,8 @@ public class CommonController {
     public Result<String> upload(MultipartFile file) {
 
         log.info("上传文件: {}", file);
+        log.info("AccessKeyId: {}", System.getenv("ALIYUN_ACCESS_KEY_ID"));
+        log.info("AccessKeySecret: {}", System.getenv("ALIYUN_ACCESS_KEY_SECRET"));
 
         try {
             String originalFilename = file.getOriginalFilename();
