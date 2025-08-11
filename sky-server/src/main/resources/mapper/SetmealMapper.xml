@@ -3,7 +3,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sky.mapper.SetmealMapper">
 
-    <insert id="insert">
+    <insert id="insert" parameterType="Setmeal" useGeneratedKeys="true" keyProperty="id">
+    <!-->
+    useGeneratedKeys="true" 表示使用 JDBC 的 getGeneratedKeys() 获取自增主键。
+    keyProperty="id" 表示把自增主键回填给 setmeal 对象的 id 属性。
+    否则 insert 操作后，setmeal 对象的 id 属性将为 null。
+ <-->
         insert into setmeal
         (category_id, name, price, status, description, image, create_time, update_time, create_user, update_user)
         values

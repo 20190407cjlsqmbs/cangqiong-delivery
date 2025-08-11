@@ -19,6 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class SetmealServiceImpl implements SetmealService {
      * 新增套餐,同时保存套餐和菜品的关联关系
      * @param setmealDTO 套餐数据传输对象
      */
+    @Transactional()
     public void saveWithDish(SetmealDTO setmealDTO) {
 
         Setmeal setmeal = new Setmeal();
@@ -47,6 +49,7 @@ public class SetmealServiceImpl implements SetmealService {
         List<SetmealDish> setmealDishes = setmealDTO.getSetmealDishes();
         setmealDishes.forEach(setmealDish -> {
             setmealDish.setSetmealId(setmealId);
+            log.info("setmealId:{}", setmealDish.getSetmealId());
         });
         //保存套餐和菜品的关联关系
         setmealDishMapper.insertBatch(setmealDishes);
