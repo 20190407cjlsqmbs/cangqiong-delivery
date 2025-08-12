@@ -74,6 +74,7 @@ public class SetmealServiceImpl implements SetmealService {
      * 批量删除套餐
      * @param ids 套餐id列表
      */
+    @Transactional
     public void deleteBatch(List<Long> ids) {
        // 起售中的套餐不能删除
         for (Long id : ids) {

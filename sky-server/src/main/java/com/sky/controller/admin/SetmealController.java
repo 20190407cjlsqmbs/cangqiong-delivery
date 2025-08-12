@@ -57,7 +57,7 @@ public class SetmealController {
      * @param ids
      * @return
      */
-    @GetMapping("/delete")
+    @DeleteMapping
     @ApiOperation("批量删除套餐")
     public Result delete(@RequestParam List<Long> ids) {
         log.info("批量删除套餐，参数：{}", ids);
