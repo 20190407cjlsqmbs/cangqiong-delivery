@@ -15,6 +15,18 @@
             (#{categoryId},#{name}, #{price}, #{status}, #{description}, #{image},
             #{createTime}, #{updateTime}, #{createUser}, #{updateUser})
     </insert>
+    <update id="update" parameterType="Setmeal">
+        update setmeal
+        <set>
+            <if test="categoryId != null">category_id = #{categoryId},</if>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="price != null">price = #{price},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="description != null">description = #{description},</if>
+            <if test="image != null">image = #{image},</if>
+        </set>
+        where id = #{id}
+    </update>
     <select id="pageQuery" resultType="com.sky.vo.SetmealVO">
         select s.*,c.name from setmeal s left join category c on s.category_id = c.id
         <where>
