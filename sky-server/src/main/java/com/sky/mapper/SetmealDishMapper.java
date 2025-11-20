@@ -15,7 +15,7 @@ public interface SetmealDishMapper {
      * @param dishIds 菜品id列表
      * @return 套餐id列表
      */
-    List<Long> getSetmealIdsByDishId(List<Long> dishIds);
+    List<Long> getSetmealIdsByDishIds(List<Long> dishIds);
 
     /**
      * 批量保存套餐和菜品的关联关系
