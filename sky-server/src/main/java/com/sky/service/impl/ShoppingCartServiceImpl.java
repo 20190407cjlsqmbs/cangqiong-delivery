@@ -107,7 +107,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             Integer number = shoppingCart.getNumber();
             if(number == 1) {
                 //  当前商品在购物车中的份数为1，直接删除当前记录
-                shoppingCartMapper.deleteById(shoppingCart.getUserId());
+                shoppingCartMapper.deleteById(shoppingCart.getId());
             } else {
                 //  当前商品在购物车中的份数不为1，修改份数即可
                 shoppingCart.setNumber(shoppingCart.getNumber() - 1);
