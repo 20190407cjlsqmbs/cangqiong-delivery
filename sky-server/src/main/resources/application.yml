@@ -60,3 +60,7 @@ sky:
     weChatPayCertFilePath: ${sky.wechat.weChatPayCertFilePath}
     notifyUrl: ${sky.wechat.notifyUrl}
     refundNotifyUrl: ${sky.wechat.refundNotifyUrl}
+  shop:
+    address: 浙江工业大学屏峰校区家和东苑
+  baidu:
+    ak:PiAmMm7wC0a0YUvosoyvC4QomgoNoRfN
